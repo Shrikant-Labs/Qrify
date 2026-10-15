@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QRify | QR Code Generator</title>
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="logo">
+            <span class="logo-icon">▦</span>
+            QRify
+        </a>
+
+        <nav>
+            <a href="#generator">Generator</a>
+            <a href="#features">Features</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <span class="eyebrow">SIMPLE. FAST. FREE.</span>
+
+            <h1>Turn any link<br>into a <span>scan.</span></h1>
+
+            <p class="hero-description">
+                Create your own QR code in seconds.
+                Paste a link, generate your code, and download it.
+            </p>
+        </section>
+
+        <section class="generator-card" id="generator">
+
+            <div class="input-section">
+                <h2>Create your QR code</h2>
+                <p class="muted">Enter the URL you want to share.</p>
+
+                <form id="qrForm">
+                    <label for="urlInput">Website URL</label>
+
+                    <input
+                        type="url"
+                        id="urlInput"
+                        placeholder="https://example.com"
+                        required
+                    >
+
+                    <p id="message" class="message" aria-live="polite"></p>
+
+                    <button type="submit" id="generateBtn">
+                        Generate QR Code →
+                    </button>
+                </form>
+
+                <p class="privacy-note">
+                    ✓ No account needed · Free to use
+                </p>
+            </div>
+
+            <div class="preview-section">
+                <span class="preview-label">YOUR QR CODE</span>
+
+                <div class="qr-box">
+                    <div id="qrPreview">
+                        <div class="placeholder">
+                            <span>▦</span>
+                            <p>Your QR code will appear here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p id="fileName" class="file-name">
+                    Your QR code is waiting
+                </p>
+
+                <button id="downloadBtn" class="download-btn" disabled>
+                    ↓ Download PNG
+                </button>
+            </div>
+
+        </section>
+
+        <section class="features" id="features">
+            <article>
+                <span class="feature-icon">⚡</span>
+                <h3>Quick generation</h3>
+                <p>Create QR codes in seconds.</p>
+            </article>
+
+            <article>
+                <span class="feature-icon">↓</span>
+                <h3>Easy download</h3>
+                <p>Save your QR code as a PNG.</p>
+            </article>
+
+            <article>
+                <span class="feature-icon">◇</span>
+                <h3>Simple to use</h3>
+                <p>Works with standard website URLs.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with care by QRify · 2026</p>
+    </footer>
+
+    <!-- QR code library for our frontend prototype -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
